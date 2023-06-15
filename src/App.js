@@ -2,7 +2,7 @@ import ExpenseItem from "./component/ExpenseItem";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" class="app">
       <ExpenseItem></ExpenseItem>
     </div>
   );
