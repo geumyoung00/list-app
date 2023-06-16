@@ -1,6 +1,6 @@
 /* CSS Document */
 
-.itembox {
+.expense__item {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -16,15 +16,19 @@
   box-sizing: border-box;
 }
 
-.itembox .txt {
+.expense__item + .expense__item {
+  margin-top: 16px;
+}
+
+.expense__item .txt {
   font-size: 1rem;
   color: #333;
   margin: 0;
   padding: 0;
 }
 
-.itembox .txt.date {
-  flex-basis: 80px;
+.expense__item .txt.date {
+  flex-basis: 140px;
   font-size: 1rem;
   line-height: 2;
   font-weight: 400;
@@ -34,7 +38,7 @@
   overflow: hidden;
 }
 
-.itembox .txt.date span {
+.expense__item .txt.date span {
   display: block;
   font-size: 0.85rem;
   width: 100%;
@@ -42,14 +46,14 @@
   background: powderblue;
 }
 
-.itembox .txt.name {
+.expense__item .txt.title {
   flex-grow: 8;
   font-size: 1.3rem;
   font-weight: 600;
   margin-left: 24px;
 }
 
-.itembox .txt.price {
+.expense__item .txt.price {
   flex-grow: 1;
   font-size: 1.3rem;
   font-weight: 500;
