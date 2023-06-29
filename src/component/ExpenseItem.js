@@ -1,6 +1,6 @@
 import { click } from "@testing-library/user-event/dist/click";
 import React, {useState} from "react";
-import "./ExpenseItem.css";
+import "./component.css";
 
 // function ExpenseItem(props) {
 //   return (

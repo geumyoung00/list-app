@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Expense from "./component/Expense";
+import AddItem from "./component/AddItem";
 
 
 const App = (props) => {
@@ -32,6 +33,7 @@ const App = (props) => {
 
 return (
   <div className="App app">
+    <AddItem></AddItem>
     <Expense expenses={expenses}></Expense>
   </div>
 );}
