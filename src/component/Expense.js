@@ -8,7 +8,7 @@ const Expense = (props) =>{
             {
                 props.expenses.map((el, idx)=>{
                     // console.log(el);
-                    return <ExpenseItem date={el.date} title={el.title} price={el.price} key={el.id}></ExpenseItem>
+                    return <ExpenseItem idx={idx} date={el.date} title={el.title} price={el.price} key={el.id}></ExpenseItem>
                 })
             }
         </div>

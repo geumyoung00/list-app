@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Expense from "./component/Expense";
 
 
-const App = (props) => {const expenses = [
+const App = (props) => {
+  const expenses = [
   {
     id: 'e1',
     title: 'Toilet Paper',
