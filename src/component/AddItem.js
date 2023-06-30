@@ -48,7 +48,7 @@ const AddItem = (props) => {
         <li className="ip_date">
           <span>날짜</span>
           <div className="datePicker">
-            <input type="text" id="date" defaultValue={newItem.purchaseDate} onChange={handleChangePurchaseDate} />
+            <input type="text" id="date" defaultValue={newItem.purchaseDate} onChange={(event)=>handleChangePurchaseDate(event)} />
             <i className="ico_calander"></i>
           </div>
         </li>
