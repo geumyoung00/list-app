@@ -4,23 +4,45 @@ import "./component.css";
 // 이벤트리스너
 
 const AddItem = (props) => {
+  //useState 합치기
+  const [newItem, setNewItem] = useState({title:'Diary', price:100, purchaseDate:'29.June.2023'});
 
-    return (
+  const [title, setTitle] = useState('Ice Cream');
+  const [price, setPrice] = useState(100);
+  const [purchaseDate, setPurchaseDate] = useState('01.07.2023');
+
+  const handleChangeTitle = (event) => {
+    // console.log(event.target.value);
+    // setTitle(event.target.value);
+    setNewItem({...newItem, title:event.target.value});
+  };
+
+  const handleChangePrice = (event) => {
+    // setPrice(event.target.value);
+    setNewItem({...newItem, price:event.target.value});
+  };
+
+  const handleChangePurchaseDate = (event) => {
+    // setPurchaseDate(event.target.value);
+    setNewItem({...newItem, purchaseDate:event.target.value});
+  };
+
+  return (
     <form className="input_box">
       <ul className="input">
         <li className="ip_title">
           <span>품목</span>
-          <input type="text" id="title" />
+          <input type="text" id="title" defaultValue={newItem.title} onChange={handleChangeTitle} />
         </li>
         <li className="ip_price">
           <span>가격</span>
-          <input type="number" id="price" />
+          <input type="number" id="price" defaultValue={newItem.price} onChange={handleChangePrice} />
         </li>
         <li className="ip_date">
           <span>날짜</span>
           <div className="datePicker">
-            <input type="text" id="date" />
-            <i className="ico_calander"></i>
+            <input type="text" id="date" defaultValue={newItem.purchaseDate} onChange={handleChangePurchaseDate}/>
+            {/* <i className="ico_calander"></i> */}
           </div>
         </li>
       </ul>
