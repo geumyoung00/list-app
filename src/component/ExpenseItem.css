@@ -1,0 +1,62 @@
+/* CSS Document */
+
+.expense__item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 16px 16px;
+  box-sizing: border-box;
+}
+
+.expense__item + .expense__item {
+  margin-top: 16px;
+}
+
+.expense__item .txt {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.expense__item .txt.date {
+  flex-basis: 140px;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: center;
+  word-break: keep-all;
+  padding: 6px 0;
+  background: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.expense__item .txt.date span {
+  display: block;
+  font-size: 0.85rem;
+  width: 100%;
+  line-height: 1.6;
+  background: powderblue;
+}
+
+.expense__item .txt.title {
+  flex-grow: 8;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-left: 24px;
+}
+
+.expense__item .txt.price {
+  flex-grow: 1;
+  font-size: 1.3rem;
+  font-weight: 500;
+}

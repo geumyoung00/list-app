@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./component.css";
+import "./AddItem.css";
 
 // 이벤트리스너
 
