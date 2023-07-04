@@ -16,10 +16,6 @@
   box-sizing: border-box;
 }
 
-.expense__item + .expense__item {
-  margin-top: 16px;
-}
-
 .expense__item .txt {
   font-size: 1rem;
   color: #333;
