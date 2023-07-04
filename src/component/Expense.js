@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import "./Expense.css";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 const Expense = (props) => {
     //useState값 만들고 onChange에 필요한 Handler 만들기 
