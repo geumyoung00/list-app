@@ -3,28 +3,37 @@ import ExpenseItem from "./ExpenseItem";
 import "./Expense.css";
 
 const Expense = (props) => {
-    //useState값 만들고 onChange에 필요한 Handler 만들기 
-    const years = [
-        {value:2023, name:"2023"},
-        {value:2022, name:"2022"},
-        {value:2021, name:"2021"},
-        {value:2020, name:"2020"}
-    ];
+  //useState값 만들고 onChange에 필요한 Handler 만들기
+  const years = [
+    { value: 2023, name: "2023" },
+    { value: 2022, name: "2022" },
+    { value: 2021, name: "2021" },
+    { value: 2020, name: "2020" },
+  ];
 
-    const [selectedYears, setSelectedYears] = useState('');
+  const [selectedYears, setSelectedYears] = useState("");
 
-    const handleChangeYears = (e) => {
-        console.log(e.target.value);
-    };
+  const handleChangeYears = (e) => {
+    console.log(e.target.value);
+  };
 
   return (
     <div className="expense__list">
       <form className="purchase_year">
-        <select name="selectYear" id="years" onChange={handleChangeYears} defaultValue={selectedYears}>
-          <option value={years[0].value}>{years[0].name}</option>
+        <select
+          name="selectYear"
+          id="years"
+          onChange={handleChangeYears}
+          defaultValue={selectedYears}
+        >
+          {years.map((el, idx)=>{
+            return <option value={el.value} key={el.name}>{el.name}</option>
+          })}
+
+          {/* <option value={years[0].value}>{years[0].name}</option>
           <option value={years[1].value}>{years[1].name}</option>
           <option value={years[2].value}>{years[2].name}</option>
-          <option value={years[3].value}>{years[3].name}</option>
+          <option value={years[3].value}>{years[3].name}</option> */}
         </select>
       </form>
 
