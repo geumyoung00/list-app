@@ -9,7 +9,7 @@ const App = (props) => {
     id: 'e1',
     title: 'Toilet Paper',
     price: 15800,
-    date: new Date(2022, 7, 14).toLocaleString(),
+    date: new Date(2023, 7, 14).toLocaleString(),
   },
   {
     id: 'e2',

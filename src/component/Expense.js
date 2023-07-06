@@ -11,11 +11,14 @@ const Expense = (props) => {
     { value: 2020, name: "2020" },
   ];
 
-  const [selectedYears, setSelectedYears] = useState("");
+  const [selectedYear, setSelectedYear] = useState("2023");
 
   const handleChangeYears = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
+    setSelectedYear(e.target.value);
   };
+
+  console.log(selectedYear);
 
   return (
     <div className="expense__list">
@@ -24,7 +27,7 @@ const Expense = (props) => {
           name="selectYear"
           id="years"
           onChange={handleChangeYears}
-          defaultValue={selectedYears}
+          defaultValue={selectedYear}
         >
           {years.map((el, idx)=>{
             return <option value={el.value} key={el.name}>{el.name}</option>
@@ -39,15 +42,24 @@ const Expense = (props) => {
 
       {props.expenses.map((el, idx) => {
         // console.log(el);
-        return (
-          <ExpenseItem
-            idx={idx}
-            date={el.date}
-            title={el.title}
-            price={el.price}
-            key={el.id}
-          ></ExpenseItem>
-        );
+
+        console.log(el.date);
+        
+        const purchaseYear = el.date.slice(0, 4);
+        console.log(purchaseYear);
+
+        if(selectedYear === purchaseYear){
+          return (
+            <ExpenseItem
+              idx={idx}
+              date={el.date}
+              title={el.title}
+              price={el.price}
+              key={el.id}
+            ></ExpenseItem>
+          );
+        };
+
       })}
     </div>
   );
