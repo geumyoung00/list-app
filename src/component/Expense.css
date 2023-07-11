@@ -1,0 +1,23 @@
+/* CSS Document */
+
+.expense__list{
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-row-gap: 16px;
+}
+
+.expense__list .purchase_year{
+  justify-self: right;
+}
+
+.expense__list .purchase_year select{
+  border: 1px solid #ddd;
+  border-radius: 0;
+  padding: 0;
+
+  width: 100px;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-indent: 4px;
+  padding: 8px 0;
+}
