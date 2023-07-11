@@ -6,38 +6,39 @@ import "./AddItem.css";
 const AddItem = (props) => {
   //useState 합치기
   const [newItem, setNewItem] = useState({
-    id: "1",
+    id: "00",
     title: "Diary",
     price: 100,
-    purchaseDate: "29.June.2023",
+    date: new Date().toLocaleDateString(),
   });
 
   // const [title, setTitle] = useState("Ice Cream");
   // const [price, setPrice] = useState(100);
   // const [purchaseDate, setPurchaseDate] = useState("01.07.2023");
 
-  const handleChangeTitle = (event) => {
+  const handleChangeTitle = (e) => {
     // console.log(event.target.value);
     // setTitle(event.target.value);
-    setNewItem({ ...newItem, title: event.target.value });
+    setNewItem({ ...newItem, title: e.target.value });
   };
 
-  const handleChangePrice = (event) => {
+  const handleChangePrice = (e) => {
     // setPrice(event.target.value);
-    setNewItem({ ...newItem, price: event.target.value });
+    setNewItem({ ...newItem, price: e.target.value });
   };
 
-  const handleChangePurchaseDate = (event) => {
+  const handleChangeDate = (e) => {
     // setPurchaseDate(event.target.value);
-    setNewItem({ ...newItem, purchaseDate: event.target.value });
+    setNewItem({ ...newItem, date: e.target.value });
   };
-
-  const handleClickAddItem = (event) => {
-    console.log(props.expenses);
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.addNewItem(newItem);
   };
 
   return (
-    <form className="input_box">
+    <form className="input_box" onSubmit={handleSubmit}>
       <ul className="input">
         <li className="ip_title">
           <span>품목</span>
@@ -63,14 +64,14 @@ const AddItem = (props) => {
             <input
               type="text"
               id="date"
-              defaultValue={newItem.purchaseDate}
-              onChange={handleChangePurchaseDate}
+              defaultValue={newItem.date}
+              onChange={handleChangeDate}
             />
             {/* <i className="ico_calander"></i> */}
           </div>
         </li>
       </ul>
-      <button className="btn" type="button" onClick={handleClickAddItem}>
+      <button className="btn" type="submit">
         추가
       </button>
     </form>

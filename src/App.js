@@ -6,39 +6,44 @@ import AddItem from "./component/AddItem";
 
 const App = (props) => {
   const expenses = [
-  {
-    id: 'e1',
-    title: 'Toilet Paper',
-    price: 15800,
-    date: new Date(2023, 7, 14).toLocaleString(),
-  },
-  {
-    id: 'e2',
-    title: 'New TV',
-    price: 2330000,
-    date: new Date(2023, 2, 12).toLocaleString(),
-  },
-  {
-    id: 'e3',
-    title: 'Notebooks',
-    price: 8700,
-    date: new Date(2021, 2, 28).toLocaleString(),
-  },
-  {
-    id: 'e4',
-    title: 'Standing Desk (Wooden)',
-    price: 599000,
-    date: new Date(2020, 5, 12).toLocaleString(),
-  },
-];
+    {
+      id: "e1",
+      title: "Toilet Paper",
+      price: 15800,
+      date: new Date(2023, 7, 14).toLocaleString(),
+    },
+    {
+      id: "e2",
+      title: "New TV",
+      price: 2330000,
+      date: new Date(2023, 2, 12).toLocaleString(),
+    },
+    {
+      id: "e3",
+      title: "Notebooks",
+      price: 8700,
+      date: new Date(2021, 2, 28).toLocaleString(),
+    },
+    {
+      id: "e4",
+      title: "Standing Desk (Wooden)",
+      price: 599000,
+      date: new Date(2020, 5, 12).toLocaleString(),
+    },
+  ];
 
-const [newExpenses, setNewExpenses] = useState(expenses);
+  const [newExpenses, setNewExpenses] = useState(expenses);
 
-return (
-  <div className="App app">
-    <AddItem expenses={expenses}></AddItem>
-    <Expense expenses={expenses}></Expense>
-  </div>
-);}
+  return (
+    <div className="App app">
+      <AddItem expense={newExpenses} 
+        addNewItem={(item) => {
+          setNewExpenses((expenses)=>[...expenses, item])
+        }}
+      ></AddItem>
+      <Expense expenses={newExpenses}></Expense>
+    </div>
+  );
+};
 
 export default App;
