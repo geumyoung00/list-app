@@ -20,6 +20,12 @@ const Expense = (props) => {
 
   console.log(selectedYear);
 
+  const result = props.expenses.filter(expense => {
+    const purchaseYear = expense.date.slice(0, 4);
+    return selectedYear === purchaseYear;
+  });
+
+
   return (
     <div className="expense__list">
       <form className="purchase_year">
@@ -37,12 +43,15 @@ const Expense = (props) => {
           <option value={years[1].value}>{years[1].name}</option>
           <option value={years[2].value}>{years[2].name}</option>
           <option value={years[3].value}>{years[3].name}</option> */}
+          
         </select>
       </form>
 
+      {/* 선택된 값의 데이터가 없을 경우, 검색결과 없음 노출 */}
+      {result.length < 1 && <div className="expense__item">검색결과가 없음</div>}
+      
       {props.expenses.map((el, idx) => {
-        // console.log(el);
-
+        
         console.log(el.date);
         
         const purchaseYear = el.date.slice(0, 4);
@@ -59,7 +68,6 @@ const Expense = (props) => {
             ></ExpenseItem>
           );
         };
-
       })}
     </div>
   );
