@@ -33,17 +33,19 @@ const App = (props) => {
   ];
 
   const [newExpenses, setNewExpenses] = useState(expenses);
+  
+  const handleAddNewItem = (item) => {
+    setNewExpenses((expenses) => [
+      ...expenses,
+      { ...item, id: newExpenses.length + 1 },
+    ]);
+  }
 
   return (
     <div className="App app">
       <AddItem
         expense={newExpenses}
-        addNewItem={(item) => {
-          setNewExpenses((expenses) => [
-            ...expenses,
-            { ...item, id: newExpenses.length + 1 },
-          ]);
-        }}
+        addNewItem={handleAddNewItem}
       ></AddItem>
       <Expense expenses={newExpenses}></Expense>
     </div>
